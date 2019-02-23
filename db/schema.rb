@@ -12,9 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2019_02_21_174922) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "colleges", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
@@ -22,7 +19,7 @@ ActiveRecord::Schema.define(version: 2019_02_21_174922) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.bigint "college_id", null: false
+    t.integer "college_id", null: false
     t.string "name", null: false
     t.string "roll_no", null: false
     t.string "email", null: false

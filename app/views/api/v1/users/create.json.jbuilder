@@ -1,0 +1,10 @@
+json.status true
+json.name @user.name
+json.mathrix_id @user.mathrix_id
+json.roll_no @user.roll_no
+json.email @user.email
+json.mobile @user.mobile
+json.course @user.course
+json.college_id @user.college_id
+json.year @user.year
+json.gender @user.gender
