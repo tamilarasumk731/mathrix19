@@ -8,7 +8,6 @@ module Api
 			end
 
 			def create
-				binding.pry
 				@user = User.new(user_params)
 				unless @user.save
 					render json: {status: false, messages: @user.errors.full_messages.to_sentence}, status: :unprocessable_entity and return
