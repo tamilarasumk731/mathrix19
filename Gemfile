@@ -67,3 +67,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'rails_admin', github: 'sferik/rails_admin'
 gem 'pry'
 gem 'rack-cors', :require => 'rack/cors'  #cors error
+
+gem 'faraday'

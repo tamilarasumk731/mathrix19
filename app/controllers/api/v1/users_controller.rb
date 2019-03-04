@@ -12,7 +12,7 @@ module Api
 				if @user.count == 0 
 					@user = User.new(user_params)
 					unless @user.save
-					render json: {status: false, messages: @user.errors.full_messages.to_sentence}, status: :unprocessable_entity and return 
+						render json: {status: false, messages: @user.errors.full_messages.to_sentence}, status: :unprocessable_entity and return 
 					end
 				else
 					render json: {status: true, message: "Already Registered.", email: @user.first.email}
