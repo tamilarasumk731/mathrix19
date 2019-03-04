@@ -30,6 +30,7 @@ module Mathrix19
         resource '*', :headers => :any, :methods => [:get, :post, :options]
       end
     end
-  
+
+    config.web_console.whiny_requests = false  
   end
 end
