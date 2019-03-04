@@ -8,7 +8,7 @@ module Api
 			end
 
 			def create
-				@user = User.where('mobile= ? OR email= ?', user_params[:mobile], user_params[:email])
+				@user = User.where(email: user_params[:email])
 				if @user.count == 0 
 					@user = User.new(user_params)
 					unless @user.save
@@ -16,7 +16,7 @@ module Api
 					end
 				else
 					render json: {status: true, message: "Already Registered.", email: @user.first.email}
-					@user.resend_mail(@user.first)
+					@user.resend_mail
 				end
 			end
 
