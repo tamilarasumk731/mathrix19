@@ -6,8 +6,8 @@ ruby '2.5.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
 # Use postgresql as the database for Active Record
-# gem 'pg', '>= 0.18', '< 2.0'
-gem 'sqlite3', '~> 1.3.6'
+gem 'pg', '>= 0.18', '< 2.0'
+# gem 'sqlite3', '~> 1.3.6'
 gem 'rqrcode-with-patches', '~> 0.5.4'
 
 # Use Puma as the app server
