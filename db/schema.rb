@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 2019_03_04_205141) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.integer "college_id", null: false
     t.string "name", null: false
     t.string "roll_no", null: false
     t.string "email", null: false
@@ -30,6 +29,7 @@ ActiveRecord::Schema.define(version: 2019_03_04_205141) do
     t.boolean "gender", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "college_id"
     t.index ["college_id"], name: "index_users_on_college_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["mathrix_id"], name: "index_users_on_mathrix_id", unique: true
