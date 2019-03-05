@@ -31,6 +31,6 @@ module Mathrix19
       end
     end
 
-    config.web_console.whiny_requests = false  
+    # config.web_console.whiny_requests = false 
   end
 end
