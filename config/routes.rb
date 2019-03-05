@@ -6,6 +6,13 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :colleges, only: [:index]
       resources :users, only: [:create]
+
+      resources :workshops do
+      	collection do
+      		get '/pay', to: "workshops#register_workshop"
+      		post '/update', to: "workshops#payment_update"
+      	end
+      end
     end
   end
 end

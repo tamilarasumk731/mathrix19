@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_25_101248) do
+ActiveRecord::Schema.define(version: 2019_03_04_205141) do
 
   create_table "colleges", force: :cascade do |t|
     t.string "name", null: false
@@ -33,7 +33,21 @@ ActiveRecord::Schema.define(version: 2019_02_25_101248) do
     t.index ["college_id"], name: "index_users_on_college_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["mathrix_id"], name: "index_users_on_mathrix_id", unique: true
-    t.index ["mobile"], name: "index_users_on_mobile", unique: true
+  end
+
+  create_table "workshops", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "payment_request_id", null: false
+    t.decimal "amount", null: false
+    t.string "status", null: false
+    t.string "long_url", null: false
+    t.string "order_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "mac"
+    t.index ["order_id"], name: "index_workshops_on_order_id", unique: true
+    t.index ["payment_request_id"], name: "index_workshops_on_payment_request_id", unique: true
+    t.index ["user_id"], name: "index_workshops_on_user_id"
   end
 
 end
