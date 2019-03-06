@@ -16,6 +16,7 @@ module Api
 				else
 					if params[:online] == "no"
 						@workshop = Workshop.new(user: @user, amount: 450.00, status: "Pending", mode: "Onspot")
+						@workshop.save
 						render json: {status: true, online: false, is_paid: false, message: "Need to pay"}, status: :ok and return
 
 					else

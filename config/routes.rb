@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       	collection do
       		get '/pay', to: "workshops#register_workshop"
       		post '/update', to: "workshops#payment_update"
+          get '/check_status', to: "workshops#check_status"
       	end
       end
     end
