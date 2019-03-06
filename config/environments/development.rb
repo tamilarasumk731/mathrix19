@@ -68,15 +68,33 @@ Rails.application.configure do
   # config.action_mailer.raise_delivery_errors = true
   # config.action_mailer.default_options = {from: 'contact@mathrix.in'}
 
+  # config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.default_url_options = {host: 'www.mathrix.in'}
+  # config.action_mailer.smtp_settings = {
+  #  address:              'smtp.gmail.com',
+  #  port:                 587,
+  #  domain:               'gmail.com',
+  #  user_name:            'mathrixannauniv@gmail.com',
+  #  password:             'rvpcefdqwfajdjae',
+  #  authentication:       'plain',
+  #  enable_starttls_auto: true  
+  # }
+
+  config.action_mailer.perform_caching = false
   config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default_url_options = {host: 'www.mathrix.in'}
+  config.action_mailer.default_options = {from: 'contact@mathrix.in'}
+
   config.action_mailer.smtp_settings = {
-   address:              'smtp.gmail.com',
-   port:                 587,
-   domain:               'gmail.com',
-   user_name:            'mathrixannauniv@gmail.com',
-   password:             'rvpcefdqwfajdjae',
+   address:              'smtpout.asia.secureserver.net',
+   port:                 25,
+   domain:               'mathrix.in',
+   user_name:            'contact@mathrix.in',
+   password:             ENV["MAIL_PASSWORD"],
    authentication:       'plain',
-   enable_starttls_auto: true  
+   authentication:       :login,
+   enable_starttls_auto: false 
   }
 end

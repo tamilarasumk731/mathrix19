@@ -24,7 +24,7 @@ module Api
 						@workshop = Workshop.new(user: @user, payment_request_id: @workshop_resp["payment_request"]["id"], amount: @workshop_resp["payment_request"]["amount"].to_f, status: @workshop_resp["payment_request"]["status"], long_url: @workshop_resp["payment_request"]["longurl"], mode: "Online")
 						@workshop.save
 
-						render json: {status: true, online: true, is_paid: false, message: "Need to pay onspot"}, status: :ok and return
+						render json: {status: true, online: true, is_paid: false, message: "Need to online", long_url: @workshop.long_url}, status: :ok and return
 					end
 				end
 			end
