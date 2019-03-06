@@ -69,3 +69,6 @@ gem 'pry'
 gem 'rack-cors', :require => 'rack/cors'  #cors error
 
 gem 'faraday'
+gem 'premailer-rails'
+gem 'nokogiri'
+gem 'figaro'
