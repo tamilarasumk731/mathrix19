@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-	belongs_to :college
+	# belongs_to :college
 	has_many :workshops
 	validates_uniqueness_of :mobile, presence: true
 	validates_uniqueness_of :email, presence: true

@@ -22,7 +22,7 @@ module Api
 
 			private
 			def user_params
-				params.permit(:college_id, :name, :roll_no, :email, :mobile, :course, :mathrix_id, :year, :gender)
+				params.permit(:college_name, :name, :roll_no, :email, :mobile, :course, :year, :gender)
 			end
 		end
 	end
