@@ -12,13 +12,13 @@ class User < ApplicationRecord
 	end
 
 	def registration_success_mail
-		@qr = RQRCode::QRCode.new(self.mathrix_id).to_img.resize(200, 200).to_data_url
-		UserMailer.registration(self, @qr).deliver_now
+		# @qr = RQRCode::QRCode.new(self.mathrix_id).to_img.resize(200, 200).to_data_url
+		UserMailer.registration(self).deliver_now
 	end
 
 	def self.resend_mail
 		@user = self.first
-		@qr = RQRCode::QRCode.new(@user.mathrix_id).to_img.resize(200, 200).to_data_url
-		UserMailer.resend(@user, @qr).deliver_now
+		# @qr = RQRCode::QRCode.new(@user.mathrix_id).to_img.resize(200, 200).to_data_url
+		UserMailer.resend(@user).deliver_now
 	end
 end
