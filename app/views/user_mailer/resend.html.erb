@@ -84,7 +84,19 @@ table {
   <p class="card-text font-italic" style="padding: 10px;">We are extremely happy to have you for the 34th Edition of Mathematics colloquium, Mathrix'19 which will be held on March 18 in the Departments of Mathematics, Anna University. Immerse yourself with various techs and the funs. Please show the QR code below to participate in any of the events and workshop.</p>
   <strong><p style="text-align: center;">Mathrix ID: <%= @user.mathrix_id %> </p></strong>
    <div align="center" >
-           <%= image_tag (@qr) %>
+           <table class="qr-code">
+            <% @qr.modules.each_index do |x| %>
+              <tr>
+              <% @qr.modules.each_index do |y| %>
+               <% if @qr.dark?(x,y) %>
+                <td class="black"/>
+               <% else %>
+                <td class="white"/>
+               <% end %>
+              <% end %>
+              </tr>
+            <% end %>
+          </table>
  
               </div><br><br>
  <div style="background-color: antiquewhite;">                   
