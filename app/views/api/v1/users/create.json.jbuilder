@@ -1,5 +1,6 @@
 json.status true
 json.is_reg true
+json.message "Registration Successful"
 json.name @user.name
 json.mathrix_id @user.mathrix_id
 json.roll_no @user.roll_no
