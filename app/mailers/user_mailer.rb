@@ -1,5 +1,5 @@
 class UserMailer < ApplicationMailer
-	default from: "mathrixannauniv@gmail.com"
+	default from: "contact@mathrix.in"
 
 	def registration(user, qr)
 	    @user = user
