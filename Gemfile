@@ -8,7 +8,7 @@ gem 'rails', '~> 5.2.2'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # gem 'sqlite3', '~> 1.3.6'
-gem 'rqrcode-with-patches', '~> 0.5.4'
+# gem 'rqrcode-with-patches', '~> 0.5.4'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
@@ -72,3 +72,7 @@ gem 'faraday'
 gem 'premailer-rails'
 gem 'nokogiri'
 gem 'figaro'
+
+# gem 'barby',  '~> 0.6.2'
+# gem 'rqrcode','~> 0.4.2'
+gem 'rqrcode_png'
