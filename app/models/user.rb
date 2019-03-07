@@ -17,7 +17,7 @@ class User < ApplicationRecord
 	end
 
 	def self.resend_mail
-		user = self.first
+		@user = self.first
 		@qr = RQRCode::QRCode.new(@user.mathrix_id).to_img.resize(200, 200).to_data_url
 		UserMailer.resend(user, @qr).deliver_now
 	end
