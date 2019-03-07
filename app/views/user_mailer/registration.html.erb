@@ -78,18 +78,18 @@ table {
    <br>
    <div align="center">
                         <table>
-                            <% @qr.modules.each_index do |x| -%>
-                                <tr>
-                                    <% @qr.modules.each_index do |y| -%>
-                                        <% if @qr.dark?(x,y) -%>
-                                            <td class="black" />
-                                            <% else -%>
-                                                <td class="white" />
-                                                <% end -%>
-                                                    <% end -%>
-                                </tr>
-                                <% end -%>
-                        </table>
+                           <% @qr.modules.each_index do |x| -%>
+                             <tr>
+                             <% @qr.modules.each_index do |y| -%>
+                              <% if @qr.dark?(x,y) -%>
+                              <td class="black"/>
+                              <% else -%>
+                              <td class="white"/>
+                              <% end -%>
+                             <% end -%>
+                             </tr>
+                           <% end -%>
+                          </table>
                     </div><br><br>
  <div style="background-color: antiquewhite;">
                       
