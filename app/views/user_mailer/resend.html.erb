@@ -1,0 +1,116 @@
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 795px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  font-size: 14px;
+}
+
+.title {
+  color: grey;
+  font-size: 14px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 14px;
+  color: black;
+}
+
+p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+table {
+            border-width: 0;
+            border-style: none;
+            border-color: #0000ff;
+            border-collapse: collapse;
+        }
+        
+        td {
+            border-width: 0;
+            border-style: none;
+            border-color: #0000ff;
+            border-collapse: collapse;
+            padding: 0;
+            margin: 0;
+            width: 10px;
+            height: 10px;
+        }
+
+    td.black {
+        background-color: #000;
+        width: 5px;
+        height: 5px;
+    }
+    
+    td.white {
+        background-color: #fff;
+        width: 5px;
+        height: 5px;
+    }
+
+
+</style>
+</head>
+<body>
+
+<h2 style="text-align:center">Thanks for Registering with us</h2>
+
+<div class="card">
+  <img src="http://mathrix.in/images/Mathrix%20Logo%20Edited.png" alt="Logo" title="Logo" style="width:15%;margin:  inherit; display:block">
+  <div class="title">Hi <%= @user.name %></div>
+  <p class="card-text font-italic" style="padding: 10px;">We are extremely happy to have you for the 34th Edition of Mathematics colloquium, Mathrix'19 which will be held on March 18 in the Departments of Mathematics, Anna University. Immerse yourself with various techs and the funs. Please show the QR code below to participate in any of the events and workshop.</p>
+  <strong><p style="text-align: center;">Mathrix ID: <%= @user.mathrix_id %> </p></strong>
+   <div align="center" >
+                  <%= image_tag @qr, :alt => "QR", :class => "qr-code", :data => {:title => "QR" }, :style => "width:15%;margin:  inherit; display:block"  %>
+ 
+              </div><br><br>
+ <div style="background-color: antiquewhite;">
+ <br>                     
+                            <div class="footer" style="display: inline-flex;">
+                                <div style=" width: 30%;text-align: center;margin: 2%;">
+                                    <i>Anna University, Chennai,Tamil Nadu 600025</i>
+                                </div>
+                                <div style=" width: 30%;text-align: center;margin: 2%;">
+                                    <i>contact@mathrix.in<br>
+                                    044 2235 8507</i>
+                                </div>
+                               <!--  <div class="footer-content">
+                                    <div class="text-center center-block">
+                                        <a href="https://www.facebook.com/MATHRIXAU/"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
+                                        <a href="mailto:bootsnipp@gmail.com"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
+                                    </div>
+                                </div> -->
+                                <div class="footer-content" style=" width: 30%;text-align: center;margin: 2%;">
+                                    <i>© 2019 Mathrix'19   <a href="https://mathrix.in"> www.mathrix.in </a></i>
+                                </div>
+                            </div>
+                 
+                        <br />
+                    </div>
+</div>
+
+</body>
+</html>
