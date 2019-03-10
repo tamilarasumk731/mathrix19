@@ -7,6 +7,10 @@ module Api
 			before_action :set_workshop, only: [:payment_update]
 
 			def register_workshop
+				if params[:online] == "no"
+					@workshops = Workshop.where(user: @user, mode: "Onspot")
+					render json: {status: true, online: false, is_paid: false, message: "Already registered for onspot payment"}, status: :ok and return if @workshops.count > 0
+				end
 				@workshop = Workshop.where(user: @user).sort_by(&:updated_at).last
 
 				if @workshop != nil && @workshop.status == "Credit"
