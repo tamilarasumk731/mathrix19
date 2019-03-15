@@ -39,7 +39,7 @@ module Api
 
 			def check_status
 				@workshop = Workshop.where(user: @user).sort_by(&:updated_at).last
-				render json: {status: false, message: "User not registered for workshop"}, status: :ok and return if @workshop == nil
+				render json: {status: false, is_user: true, is_workshop: false, message: "User not registered for workshop"}, status: :ok and return if @workshop == nil
 				if @workshop.status == "Credit" || @workshop.status == "Paid"
 					@is_paid = true
 				else
@@ -63,7 +63,7 @@ module Api
 			def set_user
 				@user = User.find_by(mathrix_id: params[:m_id])
 				if @user == nil
-					render json: {status: false, message: "User not registered"}, status: :ok and return
+					render json: {status: false, is_user: false, message: "User not registered"}, status: :ok and return
 				end
 			end
 
