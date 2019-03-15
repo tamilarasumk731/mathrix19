@@ -55,6 +55,8 @@ module Api
 			end
 
 			def onspot_register
+				@workshop = Workshop.find_by(user: @user)
+				render json: {status: true, is_paid: true, message: "User already registered"}, status: :ok and return if @workshop != nil
 				@workshop = Workshop.new(user: @user, amount: 450.00, status: "Paid", mode: "Onspot")
 				@workshop.save
 				render json: {status: true, online: false, is_paid: true, message: "Registration Successful for workshop"}, status: :ok and return
