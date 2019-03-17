@@ -24,14 +24,14 @@ module Api
 			def onspot
 				@present = Userevent.find_by(user: @user)
 				render json: {status: true, message: "Already Registered"}, status: :ok and return if @present != nil
-				@userevnts = Userevent.create(user: @user, event_id: params[:event1])
-				@userevnts = Userevent.create(user: @user, event_id: params[:event2])
-				@userevnts = Userevent.create(user: @user, event_id: params[:event3])
+				@userevnts = Userevent.create(user: @user, event_id: event_params[:event1])
+				@userevnts = Userevent.create(user: @user, event_id: event_params[:event2])
+				@userevnts = Userevent.create(user: @user, event_id: event_params[:event3])
 				render json: {status: true, message: "Registration Success"}, status: :ok and return
 			end
 
 			def set_user
-				@user = User.find_by(mathrix_id: params[:m_id])
+				@user = User.find_by(mathrix_id: event_user_params[:m_id])
 				if @user == nil
 					render json: {status: true, is_user: false, message: "User not registered"}, status: :ok and return
 				end
@@ -40,6 +40,13 @@ module Api
 			private
 			def user_params
 				params.permit(:college_name, :name, :roll_no, :email, :mobile, :course, :year, :gender)
+			end
+
+			def event_params
+				params.require(:events).permit(:event1, :event2, :event3)
+			end
+			def event_user_params
+				params.permit(:m_id)
 			end
 		end
 	end
