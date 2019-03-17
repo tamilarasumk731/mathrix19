@@ -1,6 +1,8 @@
 class User < ApplicationRecord
 	# belongs_to :college
 	has_many :workshops
+	has_many :userevents, dependent: :destroy
+	has_many :events, through: :userevents
 	validates_uniqueness_of :email, presence: true
 	validates_uniqueness_of :mathrix_id, presence: true
 

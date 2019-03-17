@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :colleges, only: [:index]
-      resources :users, only: [:create]
+      resources :users, only: [:create] do
+        collection do
+          get '/spotreg', to: "users#onspot"
+        end
+      end
 
       resources :workshops do
       	collection do
