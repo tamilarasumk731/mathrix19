@@ -7,7 +7,7 @@ Rails.application.routes.draw do
       resources :colleges, only: [:index]
       resources :users, only: [:create] do
         collection do
-          get '/spotreg', to: "users#onspot"
+          post '/spotreg', to: "users#onspot"
         end
       end
 
